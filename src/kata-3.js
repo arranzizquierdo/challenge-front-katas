@@ -4,8 +4,8 @@ export function kata3 (n, m) {
     const results = [];
     
     range.forEach(number => {
-        const numberRresult = isSquare(number);
-        numberRresult.isSquare ? results.push([number, numberRresult.sum]) : null;
+        const numberResult = isSquare(number);
+        numberResult.isSquare ? results.push([number, numberResult.sum]) : null;
     });
 
     return results;
@@ -29,10 +29,10 @@ function isSquare(number) {
     numberDividers.forEach(num => numberSquares.push(Math.pow(num, 2)));
     numberSquares.forEach(square => sumSquares += square);
 
-    const numberRresult = {
+    const numberResult = {
         isSquare: Number.isInteger(Math.sqrt(sumSquares)),
         sum: sumSquares,
     };
 
-    return numberRresult;
+    return numberResult;
 };
