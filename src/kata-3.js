@@ -1,14 +1,17 @@
 export function kata3 (n, m) {
-    const range = Array.from({length: m - n + 1}, (_, i) => i + n);
+    if (m >= n >= 1) {
+        const range = Array.from({length: m - n + 1}, (_, i) => i + n);
+        const results = [];
+        
+        range.forEach(number => {
+            const numberResult = isSquare(number);
+            numberResult.isSquare ? results.push([number, numberResult.sum]) : null;
+        });
 
-    const results = [];
-    
-    range.forEach(number => {
-        const numberResult = isSquare(number);
-        numberResult.isSquare ? results.push([number, numberResult.sum]) : null;
-    });
-
-    return results;
+        return results;
+    } else {
+        return null;
+    }
 };
 
 function getDividers(number) {
